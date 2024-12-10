@@ -1,0 +1,14 @@
+{
+  "data": [
+    { "id": "1", "personName": "Franklin", "salary": { "value": "10", "currency": "USD" } },
+    { "id": "2", "personName": "Jerry", "salary": { "value": "15", "currency": "USD" } },
+    { "id": "3", "personName": "Charles", "salary": { "value": "1200", "currency": "JPY" } },
+    { "id": "4", "personName": "Aaron", "salary": { "value": "20", "currency": "EUR" } },
+    { "id": "5", "personName": "Samuel", "salary": { "value": "25", "currency": "GBP" } },
+    { "id": "6", "personName": "David", "salary": { "value": "30", "currency": "USD" } },
+    { "id": "7", "personName": "Tosin", "salary": { "value": "18", "currency": "USD" } },
+    { "id": "8", "personName": "Emmanuel", "salary": { "value": "50", "currency": "USD" } },
+    { "id": "9", "personName": "Emil", "salary": { "value": "12", "currency": "EUR" } },
+    { "id": "10", "personName": "Joan", "salary": { "value": "75", "currency": "GBP" } }
+  ]
+}
