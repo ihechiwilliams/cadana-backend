@@ -10,6 +10,28 @@ Return responses in the format: { "currency-pair": rate }, e.g., { "USD-EUR": 0.
 ### API documentation
 The API documentation is available [here](./redoc-static.html).
 
+```aiignore
+POST /v1/exchange-rate
+
+
+payload:
+
+{
+  "data": {
+    "currency_pair": "USD-EUR"
+  }
+}
+
+
+response:
+
+{
+  "data": {
+    "USD-EUR": 0.92
+  }
+}
+```
+
 ### Setup and run the application
 Run the command in your terminal
 ``make env`` 
