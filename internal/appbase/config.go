@@ -9,7 +9,6 @@ import (
 type Config struct {
 	ServerAddress  string `env:"SERVER_ADDRESS" env-default:"0.0.0.0:3000"`
 	ServiceName    string `env:"SERVICE_NAME" env-default:"cadana-backend"`
-	Port           string `env:"PORT" env-default:"3000"`
 	ServerTimeout  int64  `env:"SERVER_TIMEOUT" env-default:"120"`
 	Env            string `env:"ENV"`
 	LogLevel       string `env:"LOG_LEVEL" env-default:"debug"`
