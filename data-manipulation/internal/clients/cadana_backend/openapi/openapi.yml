@@ -1,0 +1,123 @@
+openapi: 3.1.0
+info:
+  title: Currency Exchange Rate API
+  description: API for fetching real-time exchange rates for currency pairs.
+  version: 1.0.0
+  contact:
+    email: charlesclinton2003@gmail.com
+servers:
+  - url: https://api.cadanaapp.com
+    description: Production server
+  - url: https://staging.api.cadanaapp.com
+    description: Staging server
+  - url: http://localhost:8080
+    description: Local development server
+tags:
+  - name: rates
+    description: Operations related to rates
+paths:
+  /v1/exchange-rate:
+    post:
+      summary: Get exchange rate for a currency pair
+      description: Retrieve the exchange rate for a given currency pair.
+      operationId: v1-Get-Exchange-Rate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  $ref: '#/components/schemas/ExchangeRateRequestBody'
+        required: true
+      responses:
+        '200':
+          $ref: '#/components/responses/ExchangeRateResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      tags:
+        - invoices
+components:
+  schemas:
+    Error:
+      type: object
+      x-examples:
+        Example 1:
+          title: Server error
+          detail: 'Service temporarily unavailable, retry later'
+          status: 500
+          code: server_error
+          meta:
+            caused_by: ClassName
+      properties:
+        title:
+          type: string
+        detail:
+          type: string
+        status:
+          type: integer
+        code:
+          type: string
+        meta:
+          type: object
+      required:
+        - title
+        - detail
+        - status
+        - code
+    ErrorResponse:
+      title: ErrorResponse
+      type: object
+      description: Response that contains the list of errors
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+      required:
+        - errors
+    ExchangeRateRequestBody:
+      title: ExchangeRateRequestBody
+      type: object
+      properties:
+        currency_pair:
+          type: string
+          example: USD-EUR
+      required:
+        - currency_pair
+    ExchangeRateResponseData:
+      type: object
+      example:
+        USD-EUR: 0.92
+      additionalProperties:
+        type: number
+        format: float
+        example: 0.92
+  responses:
+    ExchangeRateResponse:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/components/schemas/ExchangeRateResponseData'
+            required:
+              - data
