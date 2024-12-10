@@ -2,7 +2,6 @@ package v1_test
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 	"testing"
 
@@ -54,7 +53,6 @@ func (e *exchangeRatesSuite) Test_V1GetExchangeRates() {
 				"currency_pair": "USD-EUR"
 			}
 		}`
-		fmt.Println(requestBody)
 
 		e.serviceA.
 			On(
@@ -85,7 +83,7 @@ func (e *exchangeRatesSuite) Test_V1GetExchangeRates() {
 			Body(requestBody).
 			Expect(e.T()).
 			Status(http.StatusOK).
-			Body(`{"USD-EUR":1.1}`).
+			Body(`{"data":{"USD-EUR":1.1}}`).
 			End()
 	})
 
@@ -125,7 +123,7 @@ func (e *exchangeRatesSuite) Test_V1GetExchangeRates() {
 			Body(requestBody).
 			Expect(e.T()).
 			Status(http.StatusOK).
-			Body(`{"USD-EUR":10.0}`).
+			Body(`{"data":{"USD-EUR":10.0}}`).
 			End()
 	})
 

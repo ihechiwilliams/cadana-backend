@@ -7,6 +7,8 @@ Concurrently request exchange rates from two distinct external services (Service
 Return the first response and disregard the second.
 Return responses in the format: { "currency-pair": rate }, e.g., { "USD-EUR": 0.92 }.
 
+### API documentation
+The API documentation is available [here](./redoc-static.html).
 
 ### Setup and run the application
 Run the command in your terminal

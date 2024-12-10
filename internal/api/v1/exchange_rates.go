@@ -100,8 +100,10 @@ func (a *API) V1GetExchangeRates(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func serializeRateToAPIResponse(currencyPair string, rate float64) server.ExchangeRateResponseData {
-	return server.ExchangeRateResponseData{
-		currencyPair: float32(rate),
+func serializeRateToAPIResponse(currencyPair string, rate float64) server.ExchangeRateResponse {
+	return server.ExchangeRateResponse{
+		Data: server.ExchangeRateResponseData{
+			currencyPair: float32(rate),
+		},
 	}
 }

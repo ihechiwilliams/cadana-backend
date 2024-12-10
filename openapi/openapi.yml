@@ -103,6 +103,8 @@ components:
         - currency_pair
     ExchangeRateResponseData:
       type: object
+      example:
+        USD-EUR: 0.92
       additionalProperties:
         type: number
         format: float
