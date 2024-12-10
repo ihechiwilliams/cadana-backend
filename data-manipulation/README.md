@@ -20,3 +20,14 @@ Write a Go program that demonstrates data manipulation and interface usage, focu
         - Sort the data array of `Person` objects by salary in ascending and descending order.
         - Group `Person` objects by salary currency into hash maps.
         - Filter `Person` objects by salary criteria in USD. Inject your API logic above as a dependecy to obtain the exchange rates to be able to filter all the different currencies in USD.
+
+
+### Setup and run the application
+Run the command in your terminal
+``make env``
+this would create your .env file
+
+Next:
+Run
+``make run``
+to start the application
