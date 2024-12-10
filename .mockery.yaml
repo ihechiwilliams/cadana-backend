@@ -1,0 +1,20 @@
+with-expecter: false
+packages:
+  cadana-backend/internal/clients/servicea:
+    interfaces:
+      ServiceAClient:
+        config:
+          dir: internal/clients/servicea/mocks
+          exported: true
+          outpkg: mocks
+          structname: MockServiceAClient
+          disable-version-string: true
+  cadana-backend/internal/clients/serviceb:
+    interfaces:
+      ServiceBClient:
+        config:
+          dir: internal/clients/serviceb/mocks
+          exported: true
+          outpkg: mocks
+          structname: MockServiceBClient
+          disable-version-string: true

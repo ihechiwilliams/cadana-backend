@@ -1,0 +1,5 @@
+package: cadana-backend
+generate:
+  client: true
+  models: true
+output: openapi/go/cadana-backend/client.gen.go
